@@ -2,10 +2,15 @@ import logo from "./logo.svg";
 import "./App.css";
 import Menu from "./components/Menu";
 import { Routes, Route } from "react-router-dom";
+import loadable from "@loadable/component";
 
-import UsersPage from "./pages/UsersPage";
-import BluePage from "./pages/BluePage";
-import RedPage from "./pages/RedPage";
+const RedPage = loadable(() => import("./pages/RedPage"));
+const BluePage = loadable(() => import("./pages/BluePage"));
+const UsersPage = loadable(() => import("./pages/UsersPage"));
+
+// import UsersPage from "./pages/UsersPage";
+// import BluePage from "./pages/BluePage";
+// import RedPage from "./pages/RedPage";
 
 function App() {
   return (
